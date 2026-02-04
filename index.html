@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon - Anindya Syifa Azzahra's Library</title>
 
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
     <style>
@@ -46,4 +47,98 @@
             font-size: 18px;
             color: #444;
             line-height: 1.7;
+            margin-bottom: 35px;
+        }
 
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .time-box {
+            background-color: #f8d7df;
+            color: #6d1b2e;
+            padding: 15px 18px;
+            border-radius: 12px;
+            min-width: 80px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .time-box small {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Coming Soon</h1>
+    <h2>Anindya Syifa Azzahra's Library</h2>
+
+    <p>
+        Sebuah ruang literasi digital yang dirancang secara personal,
+        menghadirkan koleksi pengetahuan, referensi, dan inspirasi
+        untuk mendukung proses belajar dan pengembangan intelektual.
+    </p>
+
+    <div class="countdown">
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>DAYS</small>
+        </div>
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>HOURS</small>
+        </div>
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>MINUTES</small>
+        </div>
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>SECONDS</small>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Set waktu target: 10 hari dari sekarang
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 10);
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+            document.querySelector(".countdown").innerHTML = "<p>Website is Live ✨</p>";
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
