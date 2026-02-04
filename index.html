@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMING SOON - Anindya Syifa Azzahra's Library</title>
+    <title>COMING SOON-! - Anindya Syifa Azzahra's Library</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
@@ -23,49 +23,107 @@
             content: "";
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px);
-            background-size: 22px 22px;
-            pointer-events: none;
+            background-image: radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px);
+            background-size: 20px 20px;
         }
 
         .container {
             position: relative;
-            background-color: #ffffff;
-            padding: 50px 60px;
-            border-radius: 20px;
+            background: #fff;
+            padding: 55px 65px;
+            border-radius: 22px;
             text-align: center;
-            max-width: 600px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1.8s ease-in-out;
+            max-width: 620px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            animation: fadeIn 1.6s ease-in-out;
         }
 
         .container::before {
             content: "";
             position: absolute;
             top: -18px;
+            left: 0;
+            width: 100%;
+            height: 35px;
+            background: #fff;
+            clip-path: polygon(
+                0 60%, 5% 40%, 10% 55%, 15% 35%, 20% 50%,
+                25% 30%, 30% 55%, 35% 40%, 40% 60%, 45% 45%,
+                50% 65%, 55% 40%, 60% 55%, 65% 35%, 70% 50%,
+                75% 30%, 80% 55%, 85% 40%, 90% 60%, 95% 45%, 100% 55%
+            );
+        }
+
+        .tape {
+            position: absolute;
+            top: -30px;
             left: 50%;
-            transform: translateX(-50%) rotate(-2deg);
-            width: 120px;
-            height: 30px;
-            background-color: #f2b5c4;
-            opacity: 0.85;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 140px;
+            height: 32px;
+            background: #f2b5c4;
+            opacity: 0.9;
             border-radius: 6px;
         }
 
-        .container::after {
+        .tape.corner {
+            top: auto;
+            bottom: -18px;
+            left: -10px;
+            transform: rotate(6deg);
+            width: 90px;
+            height: 26px;
+        }
+
+        .paperclip {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 28px;
+            height: 45px;
+            border: 3px solid #6d1b2e;
+            border-radius: 15px;
+            transform: rotate(10deg);
+        }
+
+        .paperclip::after {
             content: "";
             position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            box-shadow: inset 0 0 0 2px rgba(109, 27, 46, 0.05);
-            pointer-events: none;
+            top: 6px;
+            left: 6px;
+            width: 16px;
+            height: 32px;
+            border: 3px solid #6d1b2e;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .flower {
+            position: absolute;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 38px;
+            color: #f2b5c4;
+            opacity: 0.6;
+        }
+
+        .flower.one { top: -15px; left: 20px; }
+        .flower.two { bottom: -20px; right: 25px; }
+
+        .sticker {
+            position: absolute;
+            bottom: -25px;
+            right: -25px;
+            width: 70px;
+            height: 70px;
+            background: #6d1b2e;
+            opacity: 0.15;
+            border-radius: 50%;
         }
 
         h1 {
             font-family: 'Patrick Hand', cursive;
-            font-size: 58px;
+            font-size: 60px;
             color: #6d1b2e;
-            margin-bottom: 10px;
             letter-spacing: 2px;
         }
 
@@ -89,7 +147,7 @@
         }
 
         .time-box {
-            background-color: #f8d7df;
+            background: #f8d7df;
             color: #6d1b2e;
             padding: 15px 18px;
             border-radius: 12px;
@@ -105,7 +163,7 @@
             transform: translateX(-50%);
             width: 10px;
             height: 10px;
-            background-color: #6d1b2e;
+            background: #6d1b2e;
             border-radius: 50%;
         }
 
@@ -121,7 +179,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(25px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -129,12 +187,19 @@
 <body>
 
 <div class="container">
+    <div class="tape"></div>
+    <div class="tape corner"></div>
+    <div class="paperclip"></div>
+    <div class="flower one">✿</div>
+    <div class="flower two">✿</div>
+    <div class="sticker"></div>
+
     <h1>Coming Soon</h1>
     <h2>Anindya Syifa Azzahra's Library</h2>
 
     <p>
-        Ruang literasi digital untuk semua.
-        Ayo jelajahi website ini dan perluas wawasan Anda.
+        Ruang literasi digital untuk semua agar bisa belajar dan membaca.
+        Mari jelajahi website ini dan temukan pengetahuan baru.
     </p>
 
     <div class="countdown">
@@ -174,10 +239,6 @@
         document.getElementById("hours").innerText = hours;
         document.getElementById("minutes").innerText = minutes;
         document.getElementById("seconds").innerText = seconds;
-
-        if (distance < 0) {
-            document.querySelector(".countdown").innerHTML = "<p>Website is Live ✨</p>";
-        }
     }
 
     setInterval(updateCountdown, 1000);
