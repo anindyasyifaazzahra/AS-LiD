@@ -24,111 +24,112 @@
             position: absolute;
             inset: 0;
             background-image: radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-size: 18px 18px;
         }
 
         .container {
             position: relative;
             background: #fff;
-            padding: 55px 65px;
-            border-radius: 22px;
+            padding: 65px 75px;
+            border-radius: 26px;
             text-align: center;
-            max-width: 620px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            max-width: 650px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
             animation: fadeIn 1.6s ease-in-out;
         }
 
         .container::before {
             content: "";
             position: absolute;
-            top: -18px;
+            top: -22px;
             left: 0;
             width: 100%;
-            height: 35px;
+            height: 42px;
             background: #fff;
             clip-path: polygon(
-                0 60%, 5% 40%, 10% 55%, 15% 35%, 20% 50%,
-                25% 30%, 30% 55%, 35% 40%, 40% 60%, 45% 45%,
-                50% 65%, 55% 40%, 60% 55%, 65% 35%, 70% 50%,
-                75% 30%, 80% 55%, 85% 40%, 90% 60%, 95% 45%, 100% 55%
+                0 60%, 5% 35%, 10% 55%, 15% 30%, 20% 50%,
+                25% 25%, 30% 55%, 35% 35%, 40% 60%, 45% 40%,
+                50% 65%, 55% 35%, 60% 55%, 65% 30%, 70% 50%,
+                75% 25%, 80% 55%, 85% 35%, 90% 60%, 95% 45%, 100% 55%
             );
         }
 
         .tape {
             position: absolute;
-            top: -30px;
+            top: -38px;
             left: 50%;
-            transform: translateX(-50%) rotate(-3deg);
-            width: 140px;
-            height: 32px;
+            transform: translateX(-50%) rotate(-4deg);
+            width: 180px;
+            height: 38px;
             background: #f2b5c4;
             opacity: 0.9;
-            border-radius: 6px;
+            border-radius: 8px;
         }
 
         .tape.corner {
-            top: auto;
-            bottom: -18px;
-            left: -10px;
-            transform: rotate(6deg);
-            width: 90px;
-            height: 26px;
+            bottom: -28px;
+            left: -18px;
+            transform: rotate(8deg);
+            width: 120px;
+            height: 32px;
         }
 
         .paperclip {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            width: 28px;
-            height: 45px;
-            border: 3px solid #6d1b2e;
-            border-radius: 15px;
-            transform: rotate(10deg);
+            top: 10px;
+            right: 25px;
+            width: 40px;
+            height: 65px;
+            border: 4px solid #6d1b2e;
+            border-radius: 20px;
+            transform: rotate(12deg);
         }
 
         .paperclip::after {
             content: "";
             position: absolute;
-            top: 6px;
-            left: 6px;
-            width: 16px;
-            height: 32px;
-            border: 3px solid #6d1b2e;
-            border-radius: 12px;
+            top: 8px;
+            left: 8px;
+            width: 22px;
+            height: 45px;
+            border: 4px solid #6d1b2e;
+            border-radius: 15px;
             background: #fff;
         }
 
-        .flower {
+        .doodle {
             position: absolute;
             font-family: 'Patrick Hand', cursive;
-            font-size: 38px;
-            color: #f2b5c4;
+            font-size: 48px;
             opacity: 0.6;
+            color: #b03a5b;
         }
 
-        .flower.one { top: -15px; left: 20px; }
-        .flower.two { bottom: -20px; right: 25px; }
+        .heart { top: -20px; left: 25px; }
+        .star { top: 35px; left: -30px; font-size: 52px; }
+        .leaf { bottom: -25px; right: 20px; }
+        .note { bottom: 40px; right: -35px; font-size: 44px; }
 
         .sticker {
             position: absolute;
-            bottom: -25px;
-            right: -25px;
-            width: 70px;
-            height: 70px;
+            bottom: -35px;
+            right: -35px;
+            width: 95px;
+            height: 95px;
             background: #6d1b2e;
-            opacity: 0.15;
+            opacity: 0.18;
             border-radius: 50%;
         }
 
         h1 {
             font-family: 'Patrick Hand', cursive;
-            font-size: 60px;
+            font-size: 64px;
             color: #6d1b2e;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 21px;
             color: #b03a5b;
             margin-bottom: 30px;
         }
@@ -143,33 +144,32 @@
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 18px;
         }
 
         .time-box {
             background: #f8d7df;
             color: #6d1b2e;
-            padding: 15px 18px;
-            border-radius: 12px;
-            min-width: 80px;
+            padding: 18px 20px;
+            border-radius: 14px;
+            min-width: 85px;
             position: relative;
         }
 
         .time-box::before {
             content: "";
             position: absolute;
-            top: -6px;
+            top: -7px;
             left: 50%;
             transform: translateX(-50%);
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: #6d1b2e;
             border-radius: 50%;
         }
 
         .time-box span {
-            display: block;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: bold;
         }
 
@@ -190,11 +190,15 @@
     <div class="tape"></div>
     <div class="tape corner"></div>
     <div class="paperclip"></div>
-    <div class="flower one">✿</div>
-    <div class="flower two">✿</div>
+
+    <div class="doodle heart">♥</div>
+    <div class="doodle star">✦</div>
+    <div class="doodle leaf">❧</div>
+    <div class="doodle note">✎</div>
+
     <div class="sticker"></div>
 
-    <h1>Coming Soon</h1>
+    <h1>COMING SOON-!</h1>
     <h2>Anindya Syifa Azzahra's Library</h2>
 
     <p>
@@ -203,22 +207,10 @@
     </p>
 
     <div class="countdown">
-        <div class="time-box">
-            <span id="days">00</span>
-            <small>DAYS</small>
-        </div>
-        <div class="time-box">
-            <span id="hours">00</span>
-            <small>HOURS</small>
-        </div>
-        <div class="time-box">
-            <span id="minutes">00</span>
-            <small>MINUTES</small>
-        </div>
-        <div class="time-box">
-            <span id="seconds">00</span>
-            <small>SECONDS</small>
-        </div>
+        <div class="time-box"><span id="days">00</span><small>DAYS</small></div>
+        <div class="time-box"><span id="hours">00</span><small>HOURS</small></div>
+        <div class="time-box"><span id="minutes">00</span><small>MINUTES</small></div>
+        <div class="time-box"><span id="seconds">00</span><small>SECONDS</small></div>
     </div>
 </div>
 
@@ -230,15 +222,10 @@
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").innerText = days;
-        document.getElementById("hours").innerText = hours;
-        document.getElementById("minutes").innerText = minutes;
-        document.getElementById("seconds").innerText = seconds;
+        document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        document.getElementById("minutes").innerText = Math.floor((distance / (1000 * 60)) % 60);
+        document.getElementById("seconds").innerText = Math.floor((distance / 1000) % 60);
     }
 
     setInterval(updateCountdown, 1000);
