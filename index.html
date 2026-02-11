@@ -7,6 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {
     margin: 0;
@@ -68,7 +70,6 @@ nav ul li a {
     box-shadow: 0 30px 60px rgba(0,0,0,0.3);
 }
 
-
 .hero {
     text-align: center;
     margin-bottom: 70px;
@@ -124,12 +125,34 @@ nav ul li a {
     line-height: 1.6;
 }
 
-
 footer {
     text-align: center;
-    padding: 25px;
+    padding: 30px 20px;
     color: #f5f1e8;
     font-size: 14px;
+}
+
+.about-me {
+    margin-top: 20px;
+}
+
+.about-me p {
+    margin: 8px 0;
+    font-size: 18px;
+    font-family: 'Patrick Hand', cursive;
+    letter-spacing: 1px;
+}
+
+.ig-link {
+    color: #f5f1e8;
+    font-size: 26px;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.ig-link:hover {
+    color: #c8b6a6;
+    transform: scale(1.2);
 }
 </style>
 </head>
@@ -190,7 +213,14 @@ footer {
 </div>
 
 <footer>
-    © 2026 Anindya Syifa Azzahra's Library • Knowledge • Culture • Archive
+    <p>© 2026 Anindya Syifa Azzahra's Library • Knowledge • Culture • Archive</p>
+
+    <div class="about-me">
+        <p>About Me:</p>
+        <a href="https://www.instagram.com/anndyasfa" target="_blank" class="ig-link">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
 </footer>
 
 </body>
