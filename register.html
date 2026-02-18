@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar - AS-Li</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e2a38, #3e4c59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: #f5f1e8;
+    padding: 40px;
+    border-radius: 20px;
+    width: 700px;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+input {
+    flex: 1 1 45%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2f3e46;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #1e2a38;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Form Pendaftaran</h2>
+
+    <form id="registerForm">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Daftar</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let inputs = this.querySelectorAll("input");
+
+    let user = {
+        firstName: inputs[0].value,
+        lastName: inputs[1].value,
+        email: inputs[2].value,
+        phone: inputs[3].value,
+        password: inputs[4].value
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Pendaftaran berhasil! Silakan login.");
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>
