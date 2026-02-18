@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - AS-Li</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e2a38, #3e4c59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: #f5f1e8;
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2f3e46;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Masuk</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let storedUser = JSON.parse(localStorage.getItem("user"));
+
+    let email = this.querySelectorAll("input")[0].value;
+    let password = this.querySelectorAll("input")[1].value;
+
+    if(storedUser && email === storedUser.email && password === storedUser.password){
+        localStorage.setItem("isLoggedIn", true);
+        window.location.href = "index.html";
+    } else {
+        alert("Email atau password salah!");
+    }
+});
+</script>
+
+</body>
+</html>
