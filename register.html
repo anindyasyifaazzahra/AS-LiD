@@ -75,27 +75,24 @@ button:hover {
 
 <body>
 
-<div class="form-container">
-    
+    <div class="form-container">
+
     <a href="index.html" class="close-btn">✕</a>
 
     <h2>Form Pendaftaran</h2>
 
     <form id="registerForm">
-        <script>
-    
         <input type="text" placeholder="First Name" required>
         <input type="text" placeholder="Last Name" required>
         <input type="email" placeholder="Email" required>
         <input type="tel" placeholder="Phone" required>
-        <input type="password" placeholder="New Password" required>
-        <input type="password" placeholder="Confirm Password" required>
-
-</script>
-
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Create New Password" required>
+        <input type="password" placeholder="Confirm New Password" required>
+        <button type="submit">Daftar</button>
     </form>
 </div>
-    
+
 <script>
 document.getElementById("registerForm").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -110,18 +107,13 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
         password: inputs[4].value
     };
 
-    localStorage.setItem("user", JSON.stringify({
-        firstName: firstName,
-        email: email,
-        password: password
-}));
+    localStorage.setItem("user", JSON.stringify(user));
 
     alert("Pendaftaran berhasil! Silakan login.");
     window.location.href = "login.html";
 });
-
-            
 </script>
 
 </body>
 </html>
+ 
