@@ -176,6 +176,14 @@ footer {
     transform: scale(1.2);
 }
 </style>
+    <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if(isLoggedIn !== "true"){
+        window.location.href = "login.html";
+    }
+</script>
+
 </head>
 
 <body>
