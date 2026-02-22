@@ -196,7 +196,7 @@ footer {
         <li><a href="#">Arsip</a></li>
         <li><a href="#">Artikel</a></li>
         <li><a href="#">Tentang</a></li>
-        <li><a href="register.html">Daftar / Masuk</a></li>
+        <li><a href="#" id="authLink">Daftar / Masuk</a></li>
     </ul>
 </nav>
 
@@ -275,12 +275,33 @@ footer {
 </footer>
 <script>
 window.onload = function(){
+
     let isLoggedIn = localStorage.getItem("isLoggedIn");
     let user = JSON.parse(localStorage.getItem("user"));
-    
+    let authLink = document.getElementById("authLink");
+
     if(isLoggedIn === "true" && user){
-        document.querySelector(".hero h2").innerText = 
+
+        document.querySelector(".hero h2").innerText =
             "WELCOME, " + user.firstName + "!";
+
+
+        authLink.innerText = "Logout";
+
+        authLink.addEventListener("click", function(){
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+        });
+
+    } else {
+
+        authLink.innerText = "Sign Up/Sign In";
+        authLink.href = "login.html";
+
+    }
+}
+</script>
+
     }
 }
 </script>
