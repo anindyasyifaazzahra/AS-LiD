@@ -137,7 +137,7 @@ nav ul li a {
     box-shadow: 0 15px 35px rgba(0,0,0,0.35);
 }
 
-footer {
+.footer {
     text-align: center;
     padding: 30px 20px;
     color: #f5f1e8;
@@ -179,19 +179,22 @@ footer {
 </style>
 
 </head>
-    
+
 <script>
-window.onload = function() {
+window.onload = function(){
 
     let isLoggedIn = localStorage.getItem("isLoggedIn");
-    let storedUser = JSON.parse(localStorage.getItem("user"));
+    let user = JSON.parse(localStorage.getItem("user"));
 
-    if (isLoggedIn && storedUser) {
-        document.getElementById("welcomeText").innerText =
-            "WELCOME TO AS-Li, " + storedUser.name + "!";
+    if(isLoggedIn === "true" && user){
+
+        let welcome = document.getElementById("welcomeText");
+        if(welcome){
+            welcome.innerText = "WELCOME TO AS-Li, " + user.firstName + "!";
+        }
+
     }
-
-};
+}
 </script>
 
 <body>
@@ -294,7 +297,6 @@ window.onload = function(){
 
     let isLoggedIn = localStorage.getItem("isLoggedIn");
     let user = JSON.parse(localStorage.getItem("user"));
-
     let registerLink = document.getElementById("registerLink");
     let loginLink = document.getElementById("loginLink");
     let logoutLink = document.getElementById("logoutLink");
