@@ -309,7 +309,7 @@ window.onload = function(){
         userItem.style.display = "inline";
         logoutLink.style.display = "inline";
 
-        userName.innerText = user.firstName;
+        userName.innerText = user.name;
 
         logoutLink.addEventListener("click", function(){
             localStorage.removeItem("isLoggedIn");
