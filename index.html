@@ -178,34 +178,6 @@ footer {
 </style>
 
 </head>
-<script>
-window.onload = function(){
-
-    let isLoggedIn = localStorage.getItem("isLoggedIn");
-    let user = JSON.parse(localStorage.getItem("user"));
-    let authLink = document.getElementById("authLink");
-
-    if(isLoggedIn === "true" && user){
-
-        document.querySelector(".hero h2").innerText =
-            "WELCOME, " + user.firstName + "!";
-
-        authLink.innerText = "Logout";
-        authLink.href = "#";
-
-        authLink.addEventListener("click", function(){
-            localStorage.removeItem("isLoggedIn");
-            window.location.reload();
-        });
-
-    } else {
-
-        authLink.innerText = "Daftar / Masuk";
-        authLink.href = "login.html";
-
-    }
-}
-</script>
 
 <body>
 
@@ -217,8 +189,13 @@ window.onload = function(){
         <li><a href="#">Arsip</a></li>
         <li><a href="#">Artikel</a></li>
         <li><a href="#">Tentang</a></li>
-        <li><a href="register.html" id="registerLink">Sign Up</a></li>
-        <li><a href="login.html" id="loginLink">Login</a></li>
+        <li><a href="register.html" id="registerLink">Daftar</a></li>
+        <li><a href="login.html" id="loginLink">Masuk</a></li>
+        
+        <li id="userItem" style="display:none;">
+            <a href="#"><i class="fa-solid fa-user"></i> <span id="userName"></span></a>
+
+        </li>
         <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
 
     </ul>
@@ -301,17 +278,23 @@ window.onload = function(){
 window.onload = function(){
 
     let isLoggedIn = localStorage.getItem("isLoggedIn");
+    let user = JSON.parse(localStorage.getItem("user"));
 
     let registerLink = document.getElementById("registerLink");
     let loginLink = document.getElementById("loginLink");
     let logoutLink = document.getElementById("logoutLink");
+    let userItem = document.getElementById("userItem");
+    let userName = document.getElementById("userName");
 
-    if(isLoggedIn === "true"){
+    if(isLoggedIn === "true" && user){
 
         registerLink.style.display = "none";
         loginLink.style.display = "none";
-     
+
+        userItem.style.display = "inline";
         logoutLink.style.display = "inline";
+
+        userName.innerText = user.firstName;
 
         logoutLink.addEventListener("click", function(){
             localStorage.removeItem("isLoggedIn");
@@ -321,6 +304,7 @@ window.onload = function(){
     }
 }
 </script>
+
 
 
     
