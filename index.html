@@ -217,7 +217,10 @@ window.onload = function(){
         <li><a href="#">Arsip</a></li>
         <li><a href="#">Artikel</a></li>
         <li><a href="#">Tentang</a></li>
-        <li><a href="#" id="authLink">Daftar / Masuk</a></li>
+        <li><a href="register.html" id="registerLink">Sign Up</a></li>
+        <li><a href="login.html" id="loginLink">Login</a></li>
+        <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+
     </ul>
 </nav>
 
@@ -298,31 +301,26 @@ window.onload = function(){
 window.onload = function(){
 
     let isLoggedIn = localStorage.getItem("isLoggedIn");
-    let user = JSON.parse(localStorage.getItem("user"));
-    let authLink = document.getElementById("authLink");
 
-    if(isLoggedIn === "true" && user){
+    let registerLink = document.getElementById("registerLink");
+    let loginLink = document.getElementById("loginLink");
+    let logoutLink = document.getElementById("logoutLink");
 
-        document.querySelector(".hero h2").innerText =
-            "WELCOME, " + user.firstName + "!";
+    if(isLoggedIn === "true"){
 
+        registerLink.style.display = "none";
+        loginLink.style.display = "none";
+     
+        logoutLink.style.display = "inline";
 
-        authLink.innerText = "Logout";
-
-        authLink.addEventListener("click", function(){
+        logoutLink.addEventListener("click", function(){
             localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html";
+            window.location.reload();
         });
 
-    } else {
-
-        authLink.innerText = "Sign Up/Sign In";
-        authLink.href = "login.html";
-
     }
 }
 </script>
 
-    }
-}
-</script>
+
+    
