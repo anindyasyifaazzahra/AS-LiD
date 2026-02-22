@@ -176,15 +176,36 @@ footer {
     transform: scale(1.2);
 }
 </style>
-    <script>
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-    if(isLoggedIn !== "true"){
-        window.location.href = "login.html";
-    }
-</script>
 
 </head>
+<script>
+window.onload = function(){
+
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    let user = JSON.parse(localStorage.getItem("user"));
+    let authLink = document.getElementById("authLink");
+
+    if(isLoggedIn === "true" && user){
+
+        document.querySelector(".hero h2").innerText =
+            "WELCOME, " + user.firstName + "!";
+
+        authLink.innerText = "Logout";
+        authLink.href = "#";
+
+        authLink.addEventListener("click", function(){
+            localStorage.removeItem("isLoggedIn");
+            window.location.reload();
+        });
+
+    } else {
+
+        authLink.innerText = "Daftar / Masuk";
+        authLink.href = "login.html";
+
+    }
+}
+</script>
 
 <body>
 
