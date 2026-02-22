@@ -277,8 +277,8 @@ footer {
 window.onload = function(){
     let isLoggedIn = localStorage.getItem("isLoggedIn");
     let user = JSON.parse(localStorage.getItem("user"));
-
-    if(isLoggedIn && user){
+    
+    if(isLoggedIn === "true" && user){
         document.querySelector(".hero h2").innerText = 
             "WELCOME, " + user.firstName + "!";
     }
