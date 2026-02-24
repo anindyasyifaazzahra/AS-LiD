@@ -9,6 +9,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
 <style>
 body {
     margin: 0;
@@ -25,7 +27,11 @@ body::before {
     background-size: 20px 20px;
     z-index: -1;
 }
-
+    
+.logoutLink:hover {
+    color: white;
+    transition: 0.3s;
+}
 nav {
     padding: 15px 50px;
     display: flex;
@@ -185,15 +191,12 @@ nav ul li a {
 
     let isLoggedIn = localStorage.getItem("isLoggedIn");
     let user = JSON.parse(localStorage.getItem("user"));
-
     let registerLink = document.getElementById("registerLink");
     let loginLink = document.getElementById("loginLink");
     let logoutLink = document.getElementById("logoutLink");
     let userItem = document.getElementById("userItem");
     let userName = document.getElementById("userName");
-
     let welcomeText = document.getElementById("welcomeText");
-
     let profilePic = document.querySelector(".profile-pic");
 
     if(isLoggedIn === "true" && user){
@@ -237,8 +240,11 @@ nav ul li a {
         <li id="userItem" style="display:none;">
             <a href="#"><i class="fa-solid fa-user"></i> <span id="userName"></span></a>
 
-        </li>
-        <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+       <li>
+    <a href="#" id="logoutLink" style="display:none;" title="Logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+    </a>
+       </li>
 
     </ul>
 </nav>
