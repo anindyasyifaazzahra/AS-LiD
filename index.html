@@ -17,7 +17,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-body::before {
+body:before {
     content: "";
     position: fixed;
     inset: 0;
@@ -54,12 +54,6 @@ nav ul li a {
     text-decoration: none;
     color: #f5f1e8;
     font-size: 18px;
-    position: relative;
-    transition: 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
 }
 
 .scrapbook {
@@ -133,7 +127,7 @@ nav ul li a:hover::after {
     color: #333;
     line-height: 1.6;
 }
-    
+
 .youtube-section {
     display: flex;
     justify-content: center;
@@ -184,41 +178,12 @@ footer {
     color: #c8b6a6;
     transform: scale(1.2);
 }
-    #profileMenu {
-    display: none;
-    position: absolute;
-    top: 45px;
-    right: 0;
-    background: #ffffff;
-    padding: 8px 0;
-    border-radius: 8px;
-    list-style: none;
-    min-width: 150px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    z-index: 999;
-}
-
-#profileMenu li {
-    padding: 8px 15px;
-}
-
-#profileMenu li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    display: block;
-}
-
-#profileMenu li:hover {
-    background: #f0f0f0;
-}
 </style>
 
 </head>
 
 <script>
-window.onload = function(){
-
+    window.onload = function(){
     let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     let user = JSON.parse(localStorage.getItem("user"));
 
@@ -242,23 +207,14 @@ window.onload = function(){
         userName.innerText = user.firstName;
 
         logoutLink.addEventListener("click", function(){
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("user");
-            window.location.reload();
+        localStorage.removeItem("isLoggedIn");
+
+        localStorage.removeItem("user");
+        window.location.reload();
+
         });
     }
-};
-    
-    document.addEventListener("click", function(e){
-    const toggle = document.getElementById("profileToggle");
-    const menu = document.getElementById("profileMenu");
-
-    if(toggle && toggle.contains(e.target)){
-        menu.style.display = menu.style.display === "block" ? "none" : "block";
-    } else if(menu){
-        menu.style.display = "none";
-    }
-});
+    };
 </script>
 
 <body>
@@ -267,29 +223,27 @@ window.onload = function(){
     <h1>AS - Li</h1>
     <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="koleksi.html">Koleksi</a></li>
+        <li><a href="#">Koleksi</a></li>
         <li><a href="#">Arsip</a></li>
         <li><a href="#">Artikel</a></li>
         <li><a href="#">Tentang</a></li>
         <li><a href="register.html" id="registerLink">Daftar</a></li>
         <li><a href="login.html" id="loginLink">Masuk</a></li>
-        
-   <li id="userItem" style="display:none; position:relative;">
 
-    <a href="#" id="profileToggle" style="display:flex; align-items:center; gap:6px;">
-        <i class="fa-solid fa-user"></i>
+        <li id="userItem" style="display:none;">
+    <a href="#">
+        <i class="fa-solid fa-user"></i> 
         <span id="userName"></span>
     </a>
+       </li>
 
-    <ul id="profileMenu">
         <li>
-            <a href="#" id="logoutLink">
-                <i class="fa-solid fa-right-from-bracket"></i> Logout
-            </a>
+    <a href="#" id="logoutLink" style="display:none;" title="Logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+    </a>
         </li>
     </ul>
-
-</li>
+</nav>
 
 <div class="scrapbook">
     <div class="container">
@@ -364,3 +318,5 @@ window.onload = function(){
         </div>
     </div>
 </footer>
+            
+                                    
