@@ -184,6 +184,34 @@ footer {
     color: #c8b6a6;
     transform: scale(1.2);
 }
+    #profileMenu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #ffffff;
+    padding: 8px 0;
+    border-radius: 8px;
+    list-style: none;
+    min-width: 150px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+#profileMenu li {
+    padding: 8px 15px;
+}
+
+#profileMenu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    display: block;
+}
+
+#profileMenu li:hover {
+    background: #f0f0f0;
+}
 </style>
 
 </head>
@@ -220,10 +248,8 @@ window.onload = function(){
         });
     }
 };
-</script>
-
-    <script>
-document.addEventListener("click", function(e){
+    
+    document.addEventListener("click", function(e){
     const toggle = document.getElementById("profileToggle");
     const menu = document.getElementById("profileMenu");
 
@@ -234,7 +260,7 @@ document.addEventListener("click", function(e){
     }
 });
 </script>
-    
+
 <body>
 
 <nav>
