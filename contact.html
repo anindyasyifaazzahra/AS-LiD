@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact Us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Contact Us - AS-Li</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+
+
 body {
     margin: 0;
     min-height: 100vh;
     background: linear-gradient(135deg, #1e2a38, #3e4c59);
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
 }
 
 body:before {
@@ -28,12 +25,39 @@ body:before {
     z-index: -1;
 }
 
+nav {
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 32px;
+    color: #f5f1e8;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5f1e8;
+    font-size: 18px;
+}
+
 .scrapbook {
-    max-width: 700px;
-    width: 100%;
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 20px;
     background: #c8b6a6;
     border-radius: 32px;
-    padding: 25px;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
 }
 
@@ -42,42 +66,46 @@ body:before {
     padding: 40px;
     border-radius: 26px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.hero {
     text-align: center;
+    margin-bottom: 40px;
 }
 
-h2 {
-    font-size: 40px;
-    color: #1e2a38;
-    margin-bottom: 10px;
-}
-
-h3 {
-    margin-top: 30px;
+.hero h2 {
+    font-size: 42px;
+    font-weight: 600;
     color: #1e2a38;
 }
 
-.contact-btn {
-    display: block;
-    margin: 15px 0;
-    padding: 14px;
-    border-radius: 25px;
+.hero p {
+    font-size: 18px;
+    color: #444;
+    margin-top: 15px;
+}
+
+/* ===== TAMBAHAN KHUSUS CONTACT ===== */
+
+.contact-links {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: #2f3e46;
+    color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    color: white;
+    border-radius: 25px;
     transition: 0.3s ease;
 }
 
-.wa {
-    background: #25D366;
-}
-
-.ig {
-    background: #E1306C;
-}
-
-.contact-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.contact-links a:hover {
+    background: #1e2a38;
+    transform: scale(1.05);
 }
 
 form {
@@ -91,13 +119,12 @@ input, textarea {
     padding: 12px;
     border-radius: 15px;
     border: none;
-    background: #dde5d8;
     font-family: 'Poppins', sans-serif;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.1);
 }
 
 textarea {
     resize: none;
-    height: 100px;
 }
 
 button {
@@ -116,54 +143,52 @@ button:hover {
     transform: scale(1.05);
 }
 
-.success {
-    color: green;
-    margin-top: 10px;
-    display: none;
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #f5f1e8;
+    font-size: 14px;
 }
+
 </style>
 </head>
-
 <body>
+
+<nav>
+    <h1>AS-Li</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+    </ul>
+</nav>
 
 <div class="scrapbook">
     <div class="container">
-        <h2>Contact Us</h2>
 
-        <a href="https://wa.me/6281234567890" 
-           class="contact-btn wa"
-           target="_blank" 
-           rel="noopener noreferrer">
-           Chat via WhatsApp
-        </a>
+        <div class="hero">
+            <h2>Contact Us</h2>
+            <p>Kami siap menerima kritik, saran, dan masukan dari Anda untuk pengembangan perpustakaan digital ini.</p>
+        </div>
 
-        <a href="https://instagram.com/username_kamu" 
-           class="contact-btn ig"
-           target="_blank" 
-           rel="noopener noreferrer">
-           Kunjungi Instagram
-        </a>
+        <div class="contact-links">
+            <a href="https://wa.me/6282287589638" target="_blank">WhatsApp</a>
+            <a href="https://instagram.com/anndysfa" target="_blank">Instagram</a>
+        </div>
 
-        <h3>Kritik & Saran</h3>
+        <h3 style="text-align:center; color:#1e2a38;">Form Kritik & Saran</h3>
 
-        <form id="contactForm">
-            <input type="text" placeholder="Nama" required>
-            <textarea placeholder="Tulis pesan Anda..." required></textarea>
-            <button type="submit">Kirim</button>
+        <form action="#" method="post">
+            <input type="text" name="nama" placeholder="Nama Anda" required>
+            <input type="email" name="email" placeholder="Email Anda" required>
+            <textarea name="pesan" rows="5" placeholder="Tulis kritik dan saran Anda..." required></textarea>
+            <button type="submit">Kirim Pesan</button>
         </form>
 
-        <p class="success" id="successMsg">
-            Terima kasih atas pesan Anda 🤍
-        </p>
     </div>
 </div>
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    document.getElementById("successMsg").style.display = "block";
-    this.reset();
-});
-</script>
+<footer>
+    © 2026 AS-Li | Contact Page
+</footer>
 
 </body>
+</html>
