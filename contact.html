@@ -5,126 +5,165 @@
     <title>Contact Us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e2a38, #3e4c59);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            width: 400px;
-            text-align: center;
-        }
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e2a38, #3e4c59);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
 
-        h2 {
-            margin-bottom: 20px;
-        }
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
 
-        .btn {
-            display: block;
-            margin: 10px 0;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
+.scrapbook {
+    max-width: 700px;
+    width: 100%;
+    background: #c8b6a6;
+    border-radius: 32px;
+    padding: 25px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
 
-        .wa {
-            background: #25D366;
-        }
+.container {
+    background: #f5f1e8;
+    padding: 40px;
+    border-radius: 26px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    text-align: center;
+}
 
-        .ig {
-            background: #E1306C;
-        }
+h2 {
+    font-size: 40px;
+    color: #1e2a38;
+    margin-bottom: 10px;
+}
 
-        form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+h3 {
+    margin-top: 30px;
+    color: #1e2a38;
+}
 
-        input, textarea {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
+.contact-btn {
+    display: block;
+    margin: 15px 0;
+    padding: 14px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    transition: 0.3s ease;
+}
 
-        textarea {
-            resize: none;
-            height: 80px;
-        }
+.wa {
+    background: #25D366;
+}
 
-        button {
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            background: #1e2a38;
-            color: white;
-            cursor: pointer;
-        }
+.ig {
+    background: #E1306C;
+}
 
-        button:hover {
-            background: #3e4c59;
-        }
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        .success {
-            color: green;
-            margin-top: 10px;
-            display: none;
-        }
-    </style>
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 15px;
+    border: none;
+    background: #dde5d8;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #2f3e46;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #1e2a38;
+    transform: scale(1.05);
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+    display: none;
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-    <h2>Contact Us</h2>
+<div class="scrapbook">
+    <div class="container">
+        <h2>Contact Us</h2>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/6282287589638" 
-       class="btn wa" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       Chat via WhatsApp
-    </a>
+        <a href="https://wa.me/6281234567890" 
+           class="contact-btn wa"
+           target="_blank" 
+           rel="noopener noreferrer">
+           Chat via WhatsApp
+        </a>
 
-    <a href="https://instagram.com/anndyasfaaku" 
-       class="btn ig" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       Kunjungi Instagram
-    </a>
+        <a href="https://instagram.com/username_kamu" 
+           class="contact-btn ig"
+           target="_blank" 
+           rel="noopener noreferrer">
+           Kunjungi Instagram
+        </a>
 
-    <h3>Kritik & Saran</h3>
+        <h3>Kritik & Saran</h3>
 
-    <form id="contactForm">
-        <input type="text" placeholder="Nama" required>
-        <textarea placeholder="Tulis pesan Anda..." required></textarea>
-        <button type="submit">Kirim</button>
-    </form>
+        <form id="contactForm">
+            <input type="text" placeholder="Nama" required>
+            <textarea placeholder="Tulis pesan Anda..." required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
 
-    <p class="success" id="successMsg">
-        Terima kasih atas pesan Anda 🤍
-    </p>
+        <p class="success" id="successMsg">
+            Terima kasih atas pesan Anda 🤍
+        </p>
+    </div>
 </div>
 
 <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e){
-        e.preventDefault();
-        document.getElementById("successMsg").style.display = "block";
-        this.reset();
-    });
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+    this.reset();
+});
 </script>
 
 </body>
-</html>
