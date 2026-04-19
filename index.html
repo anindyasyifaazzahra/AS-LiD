@@ -12,8 +12,13 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background: linear-gradient(135deg,#1e2a38,#3e4c59);color:#333;}
 body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,0.15) 1px,transparent 1px);background-size:20px 20px;z-index:-1;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:15px 8%;color:#fff;}
-nav h1{font-size:28px;} nav ul{display:flex;gap:20px;list-style:none;} nav a{color:#fff;text-decoration:none;}
+body{
+  padding-top: 70px;
+}
+nav{display:flex;justify-content:space-between;align-items:center;position:relative;top: 0;left: 0;width: 100%;z-index: 9999;padding:15px 8%;color:#fff;}
+nav h1{font-size:28px;} 
+nav ul{display:flex;gap:20px;list-style:none;z-index: 10000;}
+nav a{color:#fff;text-decoration:none;}
 .menu-toggle{display:none;font-size:24px;cursor:pointer;}
 .scrapbook{
   margin:40px auto;
@@ -36,14 +41,8 @@ nav h1{font-size:28px;} nav ul{display:flex;gap:20px;list-style:none;} nav a{col
   bottom:15px;
   background:#fff url(texture.png);
   border-radius:20px;
-  z-index:0;
-}
-nav{
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: #1e2a38;
-}
+  z-index:1;
+}  
 .scrapbook > *{
   position:relative;
   z-index:1;
