@@ -1,169 +1,233 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AS-LiD</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AS-LiD Modern</title>
 
-    body {
-      background: #f5f7fa;
-      color: #333;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 10%;
-      background: #111;
-      color: white;
-      position: sticky;
-      top: 0;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+body{
+  background: linear-gradient(135deg,#1e2a38,#3e4c59);
+  color:#333;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-    }
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.15) 1px,transparent 1px);
+  background-size:20px 20px;
+  z-index:-1;
+}
 
-    .hero {
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      color: white;
-    }
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  color:#fff;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-    }
+nav h1{font-size:28px;}
 
-    .hero p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 50px auto;
-    }
+nav a{color:#fff;text-decoration:none;}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.menu-toggle{display:none;font-size:24px;cursor:pointer;}
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
+/* SCRAPBOOK */
+.scrapbook{
+  margin:40px auto;
+  width:90%;
+  max-width:1100px;
+  background:#c8b6a6;
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+/* HERO */
+.hero{text-align:center;margin-bottom:40px;}
+.hero h2{font-size:40px;color:#1e2a38;}
+.hero p{margin:20px auto;max-width:700px;}
+.hero a{
+  display:inline-block;
+  padding:12px 25px;
+  background:#2f3e46;
+  color:#fff;
+  border-radius:25px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: white;
-    }
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+.feature-card{
+  background:#dde5d8;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  transition:.3s;
+}
 
-      nav ul {
-        flex-direction: column;
-        background: #222;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        display: none;
-      }
+.feature-card:hover{transform:translateY(-5px);}
 
-      nav ul.active {
-        display: flex;
-      }
+/* YOUTUBE */
+.youtube-section{
+  display:flex;
+  justify-content:center;
+  padding:20px;
+}
 
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-      }
-    }
+.youtube-section iframe{
+  width:100%;
+  max-width:700px;
+  height:350px;
+  border-radius:15px;
+}
 
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-    }
-  </style>
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px 20px;
+  color:#fff;
+}
+
+.profile-pic{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:10px;
+}
+
+.ig-link{color:#fff;font-size:22px;margin:0 10px;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{
+    position:absolute;
+    right:0;
+    top:60px;
+    flex-direction:column;
+    background:#1e2a38;
+    width:200px;
+    display:none;
+    padding:20px;
+  }
+
+  nav ul.active{display:flex;}
+
+  .menu-toggle{display:block;}
+
+  .hero h2{font-size:28px;}
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h2>AS-LiD</h2>
+<nav>
+  <h1>AS - LiD</h1>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <nav>
-    <ul id="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <ul id="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Koleksi</a></li>
+    <li><a href="#">Arsip</a></li>
+    <li><a href="#">Artikel</a></li>
+    <li><a href="#">Tentang</a></li>
+    <li><a href="register.html" id="registerLink">Daftar</a></li>
+    <li><a href="login.html" id="loginLink">Masuk</a></li>
+
+    <li id="userItem" style="display:none;">
+      <a href="#"><i class="fa-solid fa-user"></i> <span id="userName"></span></a>
+    </li>
+
+    <li>
+      <a href="#" id="logoutLink" style="display:none;"><i class="fa-solid fa-right-from-bracket"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<div class="scrapbook">
 
 <section class="hero">
-  <div>
-    <h1>Welcome to AS-LiD</h1>
-    <p>Modern, Responsive, and Interactive Website</p>
+  <h2 id="welcomeText">WELCOME TO AS-LiD</h2>
+  <p>Ruang literasi digital untuk belajar, membaca, dan menjaga budaya.</p>
+  <a href="#">Jelajahi Koleksi</a>
+</section>
+
+<section class="features">
+  <div class="feature-card">
+    <h3>Koleksi Buku</h3>
+    <p>Beragam referensi digital untuk pembelajaran.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Arsip Digital</h3>
+    <p>Dokumentasi tersusun rapi dan mudah diakses.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Literasi & Budaya</h3>
+    <p>Berbagi pengetahuan untuk generasi muda.</p>
   </div>
 </section>
 
-<section class="container">
-  <div class="grid">
-    <div class="card">Content 1</div>
-    <div class="card">Content 2</div>
-    <div class="card">Content 3</div>
-  </div>
+</div>
+
+<section class="youtube-section">
+<iframe src="https://www.youtube.com/embed/DropwjmHtoo" allowfullscreen></iframe>
 </section>
 
 <footer>
-  <p>© 2026 AS-LiD</p>
+<img src="foto.jpg" class="profile-pic">
+<p>About Me</p>
+<div>
+  <a href="#" class="ig-link"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" class="ig-link"><i class="fa-solid fa-file"></i></a>
+</div>
+<p>© 2026 AS-LiD</p>
 </footer>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('menu').classList.toggle('active');
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+
+window.onload=function(){
+let isLoggedIn=localStorage.getItem("isLoggedIn")==="true";
+let user=JSON.parse(localStorage.getItem("user"));
+
+if(isLoggedIn && user){
+  document.getElementById("welcomeText").innerText="WELCOME, "+user.firstName+"!";
+  document.getElementById("registerLink").style.display="none";
+  document.getElementById("loginLink").style.display="none";
+  document.getElementById("userItem").style.display="inline-block";
+  document.getElementById("logoutLink").style.display="inline-block";
+  document.getElementById("userName").innerText=user.firstName;
+
+  document.getElementById("logoutLink").onclick=function(){
+    localStorage.clear();
+    location.reload();
   }
+}
+}
 </script>
 
 </body>
 </html>
-
