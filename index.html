@@ -55,6 +55,18 @@ nav a{color:#fff;text-decoration:none;}
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
+/* ANIMASI */
+.animate{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
+}
+
+.animate.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 .hero{text-align:center;margin-bottom:40px;}
 .hero h2{font-size:40px;color:#1e2a38;}
 .hero p{margin:20px auto;max-width:700px;}
@@ -81,6 +93,39 @@ nav a{color:#fff;text-decoration:none;}
 }
 
 .feature-card:hover{transform:translateY(-5px);}
+
+/* KOLEKSI */
+.koleksi{
+  margin-top:50px;
+}
+
+.koleksi h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#1e2a38;
+}
+
+.koleksi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.book{
+  background:#fff;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:.3s;
+}
+
+.book:hover{transform:scale(1.05);}
+
+.book img{
+  width:100%;
+  border-radius:10px;
+}
 
 .youtube-section{
   display:flex;
@@ -139,7 +184,7 @@ footer{
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <ul id="menu">
     <li><a href="#">Home</a></li>
-    <li><a href="#">Koleksi</a></li>
+    <li><a href="#koleksi">Koleksi</a></li>
     <li><a href="#">Arsip</a></li>
     <li><a href="#">Artikel</a></li>
     <li><a href="#">Tentang</a></li>
@@ -158,26 +203,45 @@ footer{
 
 <div class="scrapbook">
 
-<section class="hero">
+<section class="hero animate">
   <h2 id="welcomeText">WELCOME TO AS-LiD</h2>
   <p>Ruang literasi digital untuk belajar, membaca, dan menjaga budaya.</p>
-  <a href="#">Jelajahi Koleksi</a>
+  <a href="#koleksi">Jelajahi Koleksi</a>
 </section>
 
 <section class="features">
-  <div class="feature-card">
+  <div class="feature-card animate">
     <h3>Koleksi Buku</h3>
     <p>Beragam referensi digital untuk pembelajaran.</p>
   </div>
 
-  <div class="feature-card">
+  <div class="feature-card animate">
     <h3>Arsip Digital</h3>
     <p>Dokumentasi tersusun rapi dan mudah diakses.</p>
   </div>
 
-  <div class="feature-card">
+  <div class="feature-card animate">
     <h3>Literasi & Budaya</h3>
     <p>Berbagi pengetahuan untuk generasi muda.</p>
+  </div>
+</section>
+
+<!-- KOLEKSI -->
+<section class="koleksi" id="koleksi">
+  <h2>Koleksi Buku</h2>
+  <div class="koleksi-grid">
+    <div class="book">
+      <img src="https://via.placeholder.com/150">
+      <p>Buku 1</p>
+    </div>
+    <div class="book">
+      <img src="https://via.placeholder.com/150">
+      <p>Buku 2</p>
+    </div>
+    <div class="book">
+      <img src="https://via.placeholder.com/150">
+      <p>Buku 3</p>
+    </div>
   </div>
 </section>
 
@@ -187,28 +251,21 @@ footer{
 <iframe src="https://www.youtube.com/embed/DropwjmHtoo" allowfullscreen></iframe>
 </section>
 
-  <footer>
+<footer>
 
-    <img src="foto.jpg" alt="Foto Anindya" class="profile-pic">
+<img src="foto.jpg" alt="Foto Anindya" class="profile-pic">
 
-    <div class="about-me">
-        <p>About Me:</p>
+<div class="about-me">
+<p>About Me:</p>
 
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center;">
+<div style="display:flex;gap:20px;justify-content:center;">
+  <a href="https://www.instagram.com/anndyasfa" target="_blank" class="ig-link"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://anindyasyifaazzahra.github.io/CV.ANINDYA/" target="_blank" class="ig-link"><i class="fa-solid fa-file"></i></a>
+</div>
+</div>
 
-            <a href="https://www.instagram.com/anndyasfa" target="_blank" class="ig-link">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="https://anindyasyifaazzahra.github.io/CV.ANINDYA/" target="_blank" class="ig-link">
-                <i class="fa-solid fa-file"></i>
-            </a>
-        </div>
-    </div>
-    <div class="footer-content">
-        <p>&copy; 2026 AS-LiD </p>
-        <a href="contact.html" target="_blank">Contact Us</a>
-    </div>
+<p>&copy; 2026 AS-LiD</p>
+<a href="contact.html">Contact Us</a>
 </footer>
 
 <script>
@@ -216,6 +273,7 @@ function toggleMenu(){
   document.getElementById('menu').classList.toggle('active');
 }
 
+// LOGIN
 window.onload=function(){
 let isLoggedIn=localStorage.getItem("isLoggedIn")==="true";
 let user=JSON.parse(localStorage.getItem("user"));
@@ -233,6 +291,17 @@ if(isLoggedIn && user){
     location.reload();
   }
 }
+
+// SCROLL ANIMATION
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
 }
 </script>
 
