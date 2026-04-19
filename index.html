@@ -245,6 +245,39 @@ footer{
   </div>
 </section>
 
+<!-- EVENT SECTION -->
+<section class="event" id="event">
+  <h2 style="text-align:center;margin-top:40px;color:#1e2a38;">Event AS-LiD</h2>
+
+  <div class="event-card" style="background:#fff;padding:20px;border-radius:15px;margin:20px 0;">
+    <h3>Webinar Literasi Digital</h3>
+    <p>Tanggal: 20 Mei 2026</p>
+    <p>Belajar pentingnya literasi digital di era modern.</p>
+    <button onclick="openForm()">Daftar</button>
+  </div>
+
+  <div class="event-card" style="background:#fff;padding:20px;border-radius:15px;margin:20px 0;">
+    <h3>Workshop Arsip Digital</h3>
+    <p>Tanggal: 25 Mei 2026</p>
+    <p>Belajar mengelola arsip secara efektif.</p>
+    <button onclick="openForm()">Daftar</button>
+  </div>
+</section>
+
+</div>
+
+<!-- FORM MODAL -->
+<div id="formModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:30px;border-radius:15px;width:90%;max-width:400px;">
+    <h3 style="margin-bottom:15px;">Form Pendaftaran Event</h3>
+
+    <input type="text" placeholder="Nama" id="nama" style="width:100%;padding:10px;margin-bottom:10px;">
+    <input type="email" placeholder="Email" id="email" style="width:100%;padding:10px;margin-bottom:10px;">
+    <input type="text" placeholder="Institusi" id="instansi" style="width:100%;padding:10px;margin-bottom:10px;">
+
+    <button onclick="submitForm()" style="width:100%;padding:10px;background:#2f3e46;color:#fff;border:none;border-radius:10px;">Kirim</button>
+    <button onclick="closeForm()" style="width:100%;padding:10px;margin-top:10px;">Tutup</button>
+  </div>
 </div>
 
 <section class="youtube-section">
@@ -303,6 +336,30 @@ const observer=new IntersectionObserver(entries=>{
 
 document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
 }
+
+// EVENT FORM
+function openForm(){
+  document.getElementById('formModal').style.display='flex';
+}
+
+function closeForm(){
+  document.getElementById('formModal').style.display='none';
+}
+
+function submitForm(){
+  let nama=document.getElementById('nama').value;
+  let email=document.getElementById('email').value;
+
+  if(nama=="" || email==""){
+    alert("Isi data dulu!");
+    return;
+  }
+
+  alert("Pendaftaran berhasil!
+Terima kasih, "+nama);
+  closeForm();
+}
+
 </script>
 
 </body>
