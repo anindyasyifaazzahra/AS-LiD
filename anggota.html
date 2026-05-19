@@ -86,6 +86,36 @@ tbody tr{
 
 tbody tr:hover{
   background:#f5f5f5;
+  /* BUTTON AKSI */
+.edit-btn,
+.delete-btn{
+
+  border:none;
+
+  padding:10px 16px;
+
+  border-radius:10px;
+
+  color:#fff;
+
+  font-weight:600;
+
+  cursor:not-allowed;
+
+  opacity:0.7;
+
+  margin-right:8px;
+}
+
+/* EDIT */
+.edit-btn{
+  background:#2f3e46;
+}
+
+/* DELETE */
+.delete-btn{
+  background:#c96b6b;
+}
 }
 
 /* EMPTY */
@@ -161,6 +191,7 @@ tbody tr:hover{
         <th>Nama</th>
         <th>Email</th>
         <th>Nomor HP</th>
+        <th>Aksi</th>
       </tr>
     </thead>
 
@@ -193,6 +224,17 @@ if(user){
       <td>${user.firstName} ${user.lastName}</td>
       <td>${user.email}</td>
       <td>${user.phone}</td>
+      <td>
+
+  <button class="edit-btn" disabled>
+    Edit
+  </button>
+
+  <button class="delete-btn" disabled>
+    Hapus
+  </button>
+
+</td>
     </tr>
 
   `;
