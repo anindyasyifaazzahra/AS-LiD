@@ -243,6 +243,28 @@ nav a:hover{
 .search-bar input::placeholder{
   color:#ddd;
 }
+  /* MIC BUTTON */
+#micBtn{
+
+  border:none;
+
+  background:transparent;
+
+  color:#fff;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+#micBtn:hover{
+
+  color:#c8b6a6;
+
+  transform:scale(1.1);
+}
 
 /* DROPDOWN */
 .category-dropdown{
@@ -390,15 +412,20 @@ footer{
   <!-- SEARCH -->
   <section class="search-box">
 
-    <div class="search-bar">
+   <div class="search-bar">
 
-      <i class="fa-solid fa-magnifying-glass"></i>
+  <i class="fa-solid fa-magnifying-glass"></i>
 
-      <input 
-      type="text" 
-      placeholder="Cari buku, jurnal, arsip, atau penulis...">
+  <input 
+  type="text"
+  id="searchInput"
+  placeholder="Cari buku, jurnal, arsip, atau penulis...">
 
-    </div>
+  <button id="micBtn">
+    <i class="fa-solid fa-microphone"></i>
+  </button>
+
+</div>
 
     <div class="category-dropdown">
 
@@ -546,6 +573,59 @@ if(isLoggedIn !== "true"){
     alert("Silakan login terlebih dahulu.");
     window.location.href = "login.html";
 }
+
+
+/* VOICE SEARCH */
+
+const micBtn = document.getElementById("micBtn");
+const searchInput = document.getElementById("searchInput");
+
+const SpeechRecognition =
+window.SpeechRecognition ||
+window.webkitSpeechRecognition;
+
+if(SpeechRecognition){
+
+  const recognition = new SpeechRecognition();
+
+  recognition.lang = "id-ID";
+
+  recognition.onstart = () => {
+
+    micBtn.innerHTML =
+    '<i class="fa-solid fa-wave-square"></i>';
+
+  };
+
+  recognition.onend = () => {
+
+    micBtn.innerHTML =
+    '<i class="fa-solid fa-microphone"></i>';
+
+  };
+
+  recognition.onresult = (event) => {
+
+    const text =
+    event.results[0][0].transcript;
+
+    searchInput.value = text;
+
+  };
+
+  micBtn.addEventListener("click", () => {
+
+    recognition.start();
+
+  });
+
+}else{
+
+  alert("Browser kamu belum mendukung voice search.");
+
+}
+
+
 </script>
 
 </body>
