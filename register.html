@@ -3,281 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Daftar - AS-LiD</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
 body{
-
   background:
-  linear-gradient(rgba(30,42,56,0.75), rgba(62,76,89,0.75)),
+  linear-gradient(rgba(30,42,56,0.7), rgba(62,76,89,0.7)),
   url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600');
 
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
 
-  min-height:100vh;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  padding:20px;
+  color:#333;
 }
 
-/* FORM CONTAINER */
-.form-container{
+.scrapbook{
+  margin:40px auto;
+  width:90%;
+  max-width:1000px;
 
-  width:100%;
-  max-width:750px;
+  background:#c8b6a6;
 
-  background:rgba(255,255,255,0.96);
+  border-radius:25px;
 
-  backdrop-filter:blur(10px);
+  padding:30px;
 
-  padding:50px 40px;
-
-  border-radius:35px;
-
-  position:relative;
-
-  box-shadow:
-  0 15px 35px rgba(0,0,0,0.35);
-
-  animation:fadeIn 0.6s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* CLOSE BUTTON */
-.close-btn{
-
-  position:absolute;
-
-  top:20px;
-  right:22px;
-
-  width:40px;
-  height:40px;
-
-  border-radius:50%;
-
-  background:#f2f2f2;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  text-decoration:none;
-
-  color:#1e2a38;
-
-  transition:0.3s;
+.form-container {
+background: #f5f1e8;
+padding: 40px;
+border-radius: 20px;
+width: 700px;
+position: relative;
 }
 
-.close-btn:hover{
+.close-btn {
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 22px;
+cursor: pointer;
+color: #333;
+text-decoration: none;
+font-weight: bold;
+}
 
-  background:#2f3e46;
+.close-btn:hover {
+color: #1e2a38;
+transform: scale(1.2);
+transition: 0.2s ease;
+}
+h2 {
+text-align: center;
+}
+
+form {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+input {
+flex: 1 1 45%;
+padding: 10px;
+border-radius: 8px;
+border: 1px solid #ccc;
+}
+
+button {
+width: 100%;
+padding: 12px;
+background: #2f3e46;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+margin-top: 15px;
+}
+
+button:hover {
+background: #1e2a38;
+}
+
+footer{
+
+  margin-top:60px;
+
+  background:rgba(15,23,30,0.92);
+
+  backdrop-filter:blur(12px);
+
+  padding:60px 8% 20px;
 
   color:#fff;
 
-  transform:rotate(90deg);
+  border-top:1px solid rgba(255,255,255,0.1);
 }
 
-/* TITLE */
-.form-container h2{
+.footer-container{
 
-  text-align:center;
+  display:grid;
 
-  color:#1e2a38;
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
 
-  font-size:36px;
+  gap:40px;
+
+  margin-bottom:40px;
+}
+
+.footer-box h3{
+
+  margin-bottom:20px;
+
+  color:#c8b6a6;
+
+  font-size:22px;
+}
+
+.footer-box h4{
+
+  margin-top:10px;
 
   margin-bottom:10px;
 }
 
-.form-container p{
+.footer-box p{
 
-  text-align:center;
+  line-height:1.8;
 
-  color:#666;
+  color:#ddd;
 
-  margin-bottom:35px;
-
-  font-size:15px;
+  font-size:14px;
 }
 
-/* FORM */
-form{
+.profile-pic{
 
-  display:grid;
+  width:110px;
 
-  grid-template-columns:repeat(2,1fr);
+  height:110px;
 
-  gap:20px;
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:4px solid rgba(255,255,255,0.15);
+
+  margin-bottom:15px;
 }
 
-/* INPUT GROUP */
-.input-group{
-
-  position:relative;
+.footer-social{
+  margin-top:20px;
 }
 
-.input-group.full{
-  grid-column:1/3;
-}
+.ig-link{
 
-.input-group i{
+  display:inline-flex;
 
-  position:absolute;
+  justify-content:center;
 
-  left:18px;
-  top:50%;
+  align-items:center;
 
-  transform:translateY(-50%);
+  width:42px;
 
-  color:#777;
-}
+  height:42px;
 
-/* INPUT */
-.input-group input{
+  border-radius:50%;
 
-  width:100%;
-
-  padding:15px 15px 15px 50px;
-
-  border:none;
-  outline:none;
-
-  border-radius:18px;
-
-  background:#f3f4f6;
-
-  font-size:15px;
-
-  transition:0.3s;
-}
-
-.input-group input:focus{
-
-  background:#fff;
-
-  box-shadow:
-  0 0 0 3px rgba(47,62,70,0.15);
-}
-
-/* BUTTON */
-button{
-
-  grid-column:1/3;
-
-  width:100%;
-
-  padding:16px;
-
-  border:none;
-
-  border-radius:20px;
-
-  background:#2f3e46;
+  background:rgba(255,255,255,0.08);
 
   color:#fff;
 
-  font-size:16px;
-  font-weight:600;
+  margin-right:10px;
 
-  cursor:pointer;
+  text-decoration:none;
 
   transition:0.3s;
-
-  margin-top:10px;
 }
 
-button:hover{
+.ig-link:hover{
 
   background:#c8b6a6;
 
   color:#1e2a38;
 
-  transform:translateY(-3px);
+  transform:translateY(-4px);
 }
 
-/* LOGIN LINK */
-.login-link{
-
-  margin-top:25px;
+.footer-bottom{
 
   text-align:center;
 
-  color:#555;
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,0.1);
 
   font-size:14px;
+
+  color:#bbb;
 }
-
-.login-link a{
-
-  color:#2f3e46;
-
-  text-decoration:none;
-
-  font-weight:600;
-}
-
-.login-link a:hover{
-  color:#c8b6a6;
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .form-container{
-
-    padding:40px 25px;
-  }
-
-  form{
-
-    grid-template-columns:1fr;
-  }
-
-  .input-group.full,
-  button{
-
-    grid-column:auto;
-  }
-
-  .form-container h2{
-
-    font-size:28px;
-  }
-
-}
-
 </style>
 </head>
 
@@ -285,158 +213,73 @@ button:hover{
 
 <div class="form-container">
 
-  <a href="index.html" class="close-btn">
-    <i class="fa-solid fa-xmark"></i>
-  </a>
+<a href="index.html" class="close-btn">✕</a>
 
-  <h2>Daftar Akun</h2>
+<h2>Form Pendaftaran</h2>
 
-  <p>
-    Bergabung dengan AS-LiD dan nikmati layanan literasi digital modern
-  </p>
+<form id="registerForm">
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="phone" placeholder="Phone" required>
+        <input type="password" id="password" placeholder="New Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone" required>
+        <input type="password" placeholder="Create New Password" required>
+        <input type="password" placeholder="Confirm New Password" required>
+<button type="submit">Daftar</button>
+</form>
+</div>
+  
+<footer>
 
-  <form id="registerForm">
-
-    <!-- FIRST NAME -->
-    <div class="input-group">
-
-      <i class="fa-solid fa-user"></i>
-
-      <input
-        type="text"
-        placeholder="First Name"
-        required
-      >
-
-    </div>
-
-    <!-- LAST NAME -->
-    <div class="input-group">
-
-      <i class="fa-solid fa-user"></i>
-
-      <input
-        type="text"
-        placeholder="Last Name"
-        required
-      >
-
-    </div>
-
-    <!-- EMAIL -->
-    <div class="input-group full">
-
-      <i class="fa-solid fa-envelope"></i>
-
-      <input
-        type="email"
-        placeholder="Email"
-        required
-      >
-
-    </div>
-
-    <!-- PHONE -->
-    <div class="input-group">
-
-      <i class="fa-solid fa-phone"></i>
-
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        required
-      >
-
-    </div>
-
-    <!-- PASSWORD -->
-    <div class="input-group">
-
-      <i class="fa-solid fa-lock"></i>
-
-      <input
-        type="password"
-        placeholder="Create Password"
-        required
-      >
-
-    </div>
-
-
-
-    <button type="submit">
-
-      <i class="fa-solid fa-user-plus"></i>
-      Daftar Sekarang
-
-    </button>
-
-  </form>
-
-  <div class="login-link">
-
-    Sudah punya akun?
-    <a href="login.html">
-      Login di sini
-    </a>
-
-  </div>
-
+<div class="footer-bottom">
+  &copy; 2026 AS-LiD | Access Sphere – Literature Digital
 </div>
 
+</footer>
 <script>
-document.getElementById("registerForm")
-.addEventListener("submit", function(e){
+document.getElementById("registerForm").addEventListener("submit", function(e){
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+e.preventDefault();
 
-  e.preventDefault();
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
 
-  let firstName =
-    document.getElementById("firstName").value;
+    if(password !== confirmPassword){
+        alert("Password tidak sama!");
+        return;
+    }
 
-  let lastName =
-    document.getElementById("lastName").value;
+    localStorage.setItem("user", JSON.stringify({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        password: password
+    }));
+    let inputs = this.querySelectorAll("input");
 
-  let email =
-    document.getElementById("email").value;
+    let user = {
+        firstName: inputs[0].value,
+        lastName: inputs[1].value,
+        email: inputs[2].value,
+        phone: inputs[3].value,
+        password: inputs[4].value
+    };
 
-  let password =
-    document.getElementById("password").value;
+    localStorage.setItem("user", JSON.stringify(user));
 
-  // ambil semua user
-  let users =
-    JSON.parse(localStorage.getItem("users")) || [];
-
-  // cek email sudah ada atau belum
-  let existingUser =
-    users.find(user => user.email === email);
-
-  if(existingUser){
-    alert("Email sudah terdaftar!");
-    return;
-  }
-
-  // buat data user baru
-  let newUser = {
-    firstName,
-    lastName,
-    email,
-    password
-  };
-
-  // simpan ke array users
-  users.push(newUser);
-
-  localStorage.setItem(
-    "users",
-    JSON.stringify(users)
-  );
-
-  alert("Pendaftaran berhasil!");
-
-  window.location.href = "login.html";
-
+alert("Pendaftaran berhasil! Silakan login.");
+window.location.href = "login.html";
 });
-
 
 </script>
 
