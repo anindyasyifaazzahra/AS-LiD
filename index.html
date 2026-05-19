@@ -105,8 +105,87 @@ nav a{color:#fff;text-decoration:none;}
 } 
 .animate{opacity:0;transform:translateY(40px);transition:0.6s;} .animate.show{opacity:1;transform:translateY(0);} 
 .hero{text-align:center;margin-bottom:40px;} .hero h2{font-size:40px;color:#1e2a38;} .hero p{margin:20px auto;max-width:700px;} .hero a{display:inline-block;padding:12px 25px;background:#2f3e46;color:#fff;border-radius:25px;}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;} .feature-card{background:#dde5d8;padding:25px;border-radius:20px;text-align:center;transition:.3s;} .feature-card:hover{transform:translateY(-5px);} 
-.koleksi{
+/* LAYANAN */
+.layanan{
+  margin-top:50px;
+}
+
+/* HEADER */
+.layanan-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:25px;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+}
+
+.layanan-header h2{
+  color:#1e2a38;
+}
+
+/* GRID */
+.layanan-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+  gap:20px;
+}
+
+/* CARD */
+.feature-card{
+
+  background:#dde5d8;
+
+  padding:25px 20px;
+
+  border-radius:20px;
+
+  transition:0.3s;
+
+  text-align:center;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* ICON */
+.icon{
+
+  font-size:40px;
+
+  margin-bottom:15px;
+}
+
+.feature-card h3{
+
+  color:#1e2a38;
+
+  margin-bottom:10px;
+}
+
+.feature-card p{
+
+  font-size:14px;
+
+  color:#555;
+
+  line-height:1.6;
+}.koleksi{
   margin-top:50px;
 }
 
@@ -349,10 +428,84 @@ footer{text-align:center;padding:30px 20px;color:#fff;} .profile-pic{width:150px
   <a href="#koleksi">Jelajahi Koleksi</a>
 </section>
 
-<section class="features">
-  <div class="feature-card animate"><h3>Koleksi Buku</h3><p>Beragam referensi digital untuk pembelajaran.</p></div>
-  <div class="feature-card animate"><h3>Arsip Digital</h3><p>Dokumentasi tersusun rapi dan mudah diakses.</p></div>
-  <div class="feature-card animate"><h3>Literasi & Budaya</h3><p>Berbagi pengetahuan untuk generasi muda.</p></div>
+<section class="layanan">
+
+  <!-- HEADER -->
+  <div class="layanan-header">
+
+    <h2>Layanan Perpustakaan</h2>
+
+    <button class="lihat-btn" disabled>
+      Lihat Semua →
+    </button>
+
+  </div>
+
+  <!-- GRID -->
+  <div class="layanan-grid">
+
+    <!-- CARD 1 -->
+    <div class="feature-card animate">
+
+      <div class="icon">
+        📚
+      </div>
+
+      <h3>Koleksi Buku</h3>
+
+      <p>
+        Beragam referensi digital untuk pembelajaran modern.
+      </p>
+
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="feature-card animate">
+
+      <div class="icon">
+        💻
+      </div>
+
+      <h3>Koleksi Digital</h3>
+
+      <p>
+        Akses e-book dan dokumen digital kapan saja.
+      </p>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="feature-card animate">
+
+      <div class="icon">
+        🗂️
+      </div>
+
+      <h3>Arsip Digital</h3>
+
+      <p>
+        Dokumentasi tersusun rapi dan mudah diakses.
+      </p>
+
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="feature-card animate">
+
+      <div class="icon">
+        🌏
+      </div>
+
+      <h3>Literasi & Budaya</h3>
+
+      <p>
+        Berbagi pengetahuan untuk generasi muda.
+      </p>
+
+    </div>
+
+  </div>
+
 </section>
 
 <section class="koleksi" id="koleksi">
