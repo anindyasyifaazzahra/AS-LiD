@@ -601,45 +601,94 @@ nav a{
 .youtube-section{display:flex;justify-content:center;padding:20px;} 
 .youtube-section iframe{width:100%;max-width:700px;height:350px;border-radius:15px;}
 footer{
+
   margin-top:60px;
 
-  background:rgba(15,23,30,0.85);
+  background:rgba(15,23,30,0.92);
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
 
-  padding:50px 20px;
-
-  text-align:center;
+  padding:60px 8% 20px;
 
   color:#fff;
 
   border-top:1px solid rgba(255,255,255,0.1);
 }
-  
+
+/* CONTAINER */
+.footer-container{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:40px;
+
+  margin-bottom:40px;
+}
+
+/* BOX */
+.footer-box h3{
+
+  margin-bottom:20px;
+
+  color:#c8b6a6;
+
+  font-size:22px;
+}
+
+.footer-box h4{
+
+  margin-top:10px;
+
+  margin-bottom:10px;
+}
+
+.footer-box p{
+
+  line-height:1.8;
+
+  color:#ddd;
+
+  font-size:14px;
+}
+
+/* FOTO */
 .profile-pic{
 
-  width:120px;
-  height:120px;
+  width:110px;
+
+  height:110px;
 
   border-radius:50%;
 
   object-fit:cover;
 
-  margin-bottom:15px;
-
   border:4px solid rgba(255,255,255,0.15);
 
-  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+  margin-bottom:15px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
+
+/* SOCIAL */
+.footer-social{
+
+  margin-top:20px;
+}
+
 .ig-link{
 
   display:inline-flex;
 
   justify-content:center;
+
   align-items:center;
 
-  width:45px;
-  height:45px;
+  width:42px;
+
+  height:42px;
 
   border-radius:50%;
 
@@ -647,9 +696,9 @@ footer{
 
   color:#fff;
 
-  font-size:18px;
+  margin-right:10px;
 
-  margin:10px 8px;
+  text-decoration:none;
 
   transition:0.3s;
 }
@@ -662,7 +711,33 @@ footer{
 
   transform:translateY(-4px);
 }
-  
+
+/* JAM */
+.jam-operasional{
+
+  margin-top:20px;
+}
+
+.jam-operasional h4{
+
+  margin-bottom:10px;
+
+  color:#c8b6a6;
+}
+
+/* COPYRIGHT */
+.footer-bottom{
+
+  text-align:center;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  font-size:14px;
+
+  color:#bbb;
+}
 @media(max-width:768px){
     /* DROPDOWN MOBILE */
   .dropdown-menu{
@@ -1030,14 +1105,103 @@ footer{
 </section>
 
 <footer>
-<img src="foto.jpg" class="profile-pic">
-<p>About Me</p>
-<div>
-  <a href="https://www.instagram.com/anndyasfa" target="_blank" class="ig-link"><i class="fa-brands fa-instagram"></i></a>
-  <a href="https://anindyasyifaazzahra.github.io/CV.ANINDYA/" target="_blank" class="ig-link"><i class="fa-solid fa-file"></i></a>
+
+<div class="footer-container">
+
+  <!-- KOLOM 1 -->
+  <div class="footer-box">
+
+    <h3>Developer Profile</h3>
+
+    <img src="foto.jpg" class="profile-pic">
+
+    <h4>Anindya Syifa Azzahra</h4>
+
+    <p>
+      Mahasiswa S-1 Perpustakaan dan Sains Informasi
+    </p>
+
+    <div class="footer-social">
+
+      <a href="https://www.instagram.com/anndyasfa" target="_blank" class="ig-link">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://anindyasyifaazzahra.github.io/CV.ANINDYA/" target="_blank" class="ig-link">
+        <i class="fa-solid fa-file"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- KOLOM 2 -->
+  <div class="footer-box">
+
+    <h3>AS-LiD</h3>
+
+    <p>
+      AS-LiD adalah ruang literasi digital
+      yang menghadirkan buku, arsip,
+      dan pengetahuan untuk mendukung
+      budaya membaca dan pembelajaran modern.
+    </p>
+
+    <div class="jam-operasional">
+
+      <h4>Jam Operasional</h4>
+
+      <p>Senin - Jumat : 08.00 - 20.00</p>
+
+      <p>Sabtu : 09.00 - 17.00</p>
+
+      <p>Minggu : Libur</p>
+
+    </div>
+
+  </div>
+
+  <!-- KOLOM 3 -->
+  <div class="footer-box">
+
+    <h3>Kontak & Sosial Media</h3>
+
+    <p>
+      📍 Medan, Sumatera Utara
+    </p>
+
+    <p>
+      📧 aslidlibrary@gmail.com
+    </p>
+
+    <p>
+      📞 +62 812-3456-7890
+    </p>
+
+    <div class="footer-social">
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a href="#" class="ig-link">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+    </div>
+
+  </div>
+
 </div>
-<a href="contact.html">Contact Us</a>
-<p>&copy; 2026 AS-LiD</p>
+
+<div class="footer-bottom">
+  &copy; 2026 AS-LiD | Digital Library Website
+</div>
+
 </footer>
 
 <script>
