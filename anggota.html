@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AS-LiD | Data Anggota</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#1e2a38,#3e4c59);
+  min-height:100vh;
+  padding:40px 20px;
+}
+
+/* HEADER */
+.header{
+  background:#2f3e46;
+
+  padding:25px 8%;
+
+  border-radius:20px;
+
+  margin-bottom:40px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.header h1{
+  color:#fff;
+  font-size:38px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+
+  background:#fff;
+
+  padding:50px;
+
+  border-radius:30px;
+
+  box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+.container h2{
+  color:#1e2a38;
+  margin-bottom:30px;
+  font-size:36px;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:20px;
+}
+
+thead{
+  background:#2f3e46;
+  color:#fff;
+}
+
+th, td{
+  padding:18px;
+  text-align:left;
+}
+
+tbody tr{
+  border-bottom:1px solid #ddd;
+  transition:0.3s;
+}
+
+tbody tr:hover{
+  background:#f5f5f5;
+}
+
+/* EMPTY */
+.empty{
+  text-align:center;
+  padding:30px;
+  color:#666;
+}
+
+/* BUTTON */
+.back-btn{
+  display:inline-block;
+
+  margin-top:30px;
+
+  padding:14px 28px;
+
+  border-radius:50px;
+
+  background:#c8b6a6;
+
+  color:#1e2a38;
+
+  text-decoration:none;
+
+  font-weight:600;
+
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background:#2f3e46;
+  color:#fff;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .container{
+    padding:25px 15px;
+    overflow-x:auto;
+  }
+
+  .container h2{
+    font-size:28px;
+  }
+
+  table{
+    min-width:600px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>AS-LiD</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <h2>Data Anggota AS-LiD</h2>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Nomor HP</th>
+      </tr>
+    </thead>
+
+    <tbody id="anggotaTable">
+
+    </tbody>
+
+  </table>
+
+  <a href="index.html" class="back-btn">
+    Back to Home
+  </a>
+
+</div>
+
+<script>
+
+/* AMBIL DATA USER */
+let user = JSON.parse(localStorage.getItem("user"));
+
+let table = document.getElementById("anggotaTable");
+
+/* JIKA ADA DATA */
+if(user){
+
+  table.innerHTML = `
+
+    <tr>
+      <td>1</td>
+      <td>${user.firstName} ${user.lastName}</td>
+      <td>${user.email}</td>
+      <td>${user.phone}</td>
+    </tr>
+
+  `;
+
+}else{
+
+  table.innerHTML = `
+
+    <tr>
+      <td colspan="4" class="empty">
+        Belum ada anggota terdaftar
+      </td>
+    </tr>
+
+  `;
+
+}
+
+</script>
+
+</body>
+</html>
